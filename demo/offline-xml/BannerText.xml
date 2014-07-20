@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetListItemsResponse xmlns="http://schemas.microsoft.com/sharepoint/soap/">
+            <GetListItemsResult>
+                <listitems xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+                           xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+                           xmlns:rs='urn:schemas-microsoft-com:rowset'
+                           xmlns:z='#RowsetSchema'>
+                    <rs:data ItemCount="2">
+                        <z:row ows_LinkTitle='Change Me' ows_SortOrder='1.00000000000000'
+                               ows_Text='&lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi commodo, libero eu consequat lobortis, turpis felis mollis dolor, a egestas arcu odio eget lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum faucibus, enim vitae auctor scelerisque, orci turpis bibendum massa, ac elementum dolor elit vitae dui. Phasellus tristique lorem rutrum, lobortis tellus sed, pellentesque lacus.&lt;/div&gt;'
+                               ows_MetaInfo='1;#' ows__ModerationStatus='0' ows__Level='1' ows_ID='1'
+                               ows_UniqueId='1;#{8669D330-B570-4B03-AEF8-70FC6CF6E9EB}' ows_owshiddenversion='1'
+                               ows_FSObjType='1;#0' ows_Created_x0020_Date='1;#2014-03-22 09:12:38'
+                               ows_Created='2014-03-22 09:12:38' ows_Title='Change Me' ows_FileLeafRef='1;#1_.000'
+                               ows_PermMask='0x7fffffffffffffff' ows_Modified='2014-03-22 09:12:38'
+                               ows_FileRef='1;#FakeSite/Lists/BannerText/1_.000'/>
+                        <z:row ows_LinkTitle='Change me too' ows_SortOrder='2.00000000000000'
+                               ows_Text='&lt;div&gt;Praesent ligula tellus, tincidunt a sem a, dapibus tristique dolor. Nulla facilisi. Morbi sit amet odio eget metus rhoncus mattis id sed ante. Quisque lacinia justo non volutpat cursus. Integer pretium imperdiet leo mollis dignissim. In fermentum mauris sit amet fermentum sollicitudin. Etiam ut tellus sit amet leo iaculis sagittis ac eu turpis. Aenean luctus posuere sollicitudin. Mauris placerat ipsum eu convallis eleifend.&lt;/div&gt;'
+                               ows_MetaInfo='2;#' ows__ModerationStatus='0' ows__Level='1' ows_ID='2'
+                               ows_UniqueId='2;#{D7F03928-3E14-435C-B898-23A9744E0C9E}' ows_owshiddenversion='1'
+                               ows_FSObjType='2;#0' ows_Created_x0020_Date='2;#2014-03-22 09:13:24'
+                               ows_Created='2014-03-22 09:13:24' ows_Title='Change me too' ows_FileLeafRef='2;#2_.000'
+                               ows_PermMask='0x7fffffffffffffff' ows_Modified='2014-03-22 09:13:24'
+                               ows_FileRef='2;#FakeSite/Lists/BannerText/2_.000'/>
+                    </rs:data>
+                </listitems>
+            </GetListItemsResult>
+        </GetListItemsResponse>
+    </soap:Body>
+</soap:Envelope>

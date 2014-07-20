@@ -1,0 +1,84 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>RTM</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="bower_components/select2/select2.css">
+    <link rel="stylesheet" href="bower_components/select2/select2-bootstrap.css">
+    <link rel="stylesheet" href="styles/app.css">
+
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/angular-point/dist/ie-safe.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body ng-app="demo" id="ng-app">
+
+<div ng-include="'views/navbar_view.html'"></div>
+
+<!-- Add your site or application content here -->
+<div class="application-content">
+    <div ui-view>
+        <div class="splash">
+            <div class="message">
+                Angular Point Offline Generator
+            </div>
+            <img src="images/Preloader.gif" alt="Preloader">
+        </div>
+    </div>
+</div>
+
+<!-- CDN Resources -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+
+<!--Angular Modules-->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-resource.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-sanitize.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-touch.min.js"></script>
+
+<!--JS Plugins/Utils -->
+<script src="bower_components/SPServices/jquery.SPServices.js"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="bower_components/lodash-deep/lodash-deep.js"></script>
+<script src="bower_components/select2/select2.js"></script>
+
+<!--3rd Party Angular Modules-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-ui-select2/src/select2.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+
+<!-- PRIMARY JS FILE -->
+<script src="scripts/app.js"></script>
+
+<!-- SERVICES -->
+<script src="bower_components/angular-point/dist/angular-point.js"></script>
+
+<!-- CONTROLLERS -->
+<script src="bower_components/angular-point-offline-generator/src/ap-offline-generator-ctrl.js"></script>
+
+
+</body>
+</html>

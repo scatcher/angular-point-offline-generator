@@ -1,0 +1,35 @@
+.application-content {
+    margin-top: 60px;
+}
+.splash {
+    text-align: center;
+    margin: 10% 0 0 0;
+}
+.splash .message {
+    font-size: 5em;
+    line-height: 1.5em;
+    -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
+    text-transform: uppercase;
+}
+.splash .icon-spinner {
+    text-align: center;
+    display: inline-block;
+    font-size: 5em;
+    margin-top: 50px;
+}
+.loader {
+    margin: 6px 8px 4px 8px;
+    visibility: hidden;
+}
+.loader .active {
+    visibility: visible;
+}
+.page-content {
+    margin: 0;
+    padding: 8px;
+}
+BODY {
+    overflow: inherit;
+    height: auto;
+}
