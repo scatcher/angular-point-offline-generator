@@ -8,30 +8,10 @@
  * A tool developed to assist with the angular-point efforts.
  */
 angular.module('demo', [
-  //Vendor Services
-//  'ngAnimate',
-//  'ngResource',
-//  'ngSanitize',
-//  'ngAnimate',
-//  'ngTouch',
-//  'ngTable',
-
-  //Angular UI
   'ui.bootstrap',
-//  'ui.date',
   'ui.select2',
-//  'ui.highlight',
-//  'ui.sortable',
   'ui.router',
-//  'ui.utils',
-//  'ngGrid',
-
-  //Plugins
-//  'firebase',
-//  'angularSpinner',
   'toastr',
-//  'highcharts-ng',
-//  'textAngular',
 
   //SP-Angular
   'angularPoint'

@@ -26,7 +26,7 @@
     "angular-mocks": "~1.2",
     "angular-resource": "~1.2",
     "angular-bootstrap": "^0.11",
-    "angular-point-offline-generator": "https://github.com/scatcher/angular-point-offline-generator#master"
+    "angular-point-offline-generator": "https://github.com/scatcher/angular-point-offline-generator.git#master"
   },
   "ignore": [
     "**/.*",
