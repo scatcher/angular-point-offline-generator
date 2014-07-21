@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: [
-          '{.tmp,<%= config.src %>}/*.js',
+          '{.tmp,<%= config.src %>}/**/*.js',
           '{.tmp,<%= config.demo %>}/**/*.js'
         ],
         tasks: [],
