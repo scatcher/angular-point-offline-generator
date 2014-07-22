@@ -68,9 +68,9 @@ angular.module('angularPoint')
       apDataService.serviceWrapper(payload)
         .then(function (response) {
           /** Update the visible XML response and allow for downloading */
-          $scope.state.xmlResponse = apConfig.offline ?
+          $scope.state.xmlResponse =
             /** Get the string representation of the XML */
-            (new XMLSerializer()).serializeToString(response) : response.responseText;
+            (new XMLSerializer()).serializeToString(response);
         });
     };
 
