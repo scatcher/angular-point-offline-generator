@@ -122,7 +122,8 @@ module.exports = function (grunt) {
             removeRedundantAttributes: true,
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
-          }
+          },
+          prefix: 'bower_components/angular-point-offline-generator/'
         },
         src: '<%= config.src %>/*.html',
         dest: '.tmp/ap-offline-generator-templates.js'
