@@ -69,7 +69,7 @@ angular.module('angularPoint')
         .then(function (response) {
           /** Update the visible XML response and allow for downloading */
           $scope.state.xmlResponse = apConfig.offline ?
-            /** Get the string representation of the XML, for both offline and online modes */
+            /** Get the string representation of the XML */
             (new XMLSerializer()).serializeToString(response) : response.responseText;
         });
     };
