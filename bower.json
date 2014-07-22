@@ -18,7 +18,6 @@
     "lodash-deep": "^1.1",
     "SPServices": "https://github.com/scatcher/SPServices.git#master",
     "angular-point": "https://github.com/scatcher/angular-point.git#master",
-    "angular-point-styles": "https://github.com/scatcher/angular-point-styles.git#master",
     "bootstrap": "^3.2.0"
   },
   "devDependencies": {
