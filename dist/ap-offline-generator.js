@@ -1,7 +1,17 @@
 'use strict';
 
+/**
+ * @ngdoc function
+ * @name angularPoint.generateOfflineCtrl
+ * @description
+ * Allows us to view lists within a site collection and download a XML representation of the list to use offline.  Allows
+ * the user to set query parameters to filter the information that is returned.
+ * @requires angularPoint.apDataService
+ * @requires angularPoint.apConfig
+ * @requires angularPoint.apExportService
+ */
 angular.module('angularPoint')
-  .controller('generateOfflineCtrl', ["$scope", "$q", "apDataService", "apConfig", "apDebugService", "toastr", function ($scope, $q, apDataService, apConfig, apDebugService, toastr) {
+  .controller('generateOfflineCtrl', ["$scope", "$q", "apDataService", "apConfig", "apExportService", "toastr", function ($scope, $q, apDataService, apConfig, apExportService, toastr) {
 
     /** Supported query types */
     $scope.operations = ['GetListItemChangesSinceToken', 'GetListItems'];
@@ -23,6 +33,8 @@ angular.module('angularPoint')
 
     /** Get list/library definitions for the site */
     $scope.getLists = function () {
+      /** Ensure array is empty */
+      $scope.listCollection.length = 0;
       apDataService.getCollection({
         operation: "GetListCollection",
         webURL: $scope.state.siteUrl
@@ -35,11 +47,42 @@ angular.module('angularPoint')
     /** Make initial call */
     $scope.getLists();
 
+    /**
+     * @name stripQuery
+     * @description
+     * Allows us to paste in the query directly from a model without removing the apostrophe's or plus
+     * signs used.
+     * @param {string} str CAML query.
+     * @returns {string} Cleaned up string.
+     * @example
+     * <h3>The following could be directly pasted into the CAML Query textarea</h3>
+     * <pre>
+     * '<Query>' +
+     * '   <Where>' +
+     * '       <Geq>' +
+     * '           <FieldRef Name="To"/>' +
+     * '           <Value Type="DateTime">' +
+     * '               <Today OffsetDays="-30"/>' +
+     * '           </Value>' +
+     * '       </Geq>' +
+     * '   </Where>' +
+     * '   <OrderBy>' +
+     * '       <FieldRef Name="From" Ascending="TRUE"/>' +
+     * '   </OrderBy>' +
+     * '</Query>'
+     * </pre>
+     */
+    var stripQuery = function (str) {
+      return str
+        .replace('\'', '')
+        .replace('+', '')
+        .trim();
+    };
+
     /** Main call to query list/library and capture XML response */
     $scope.getXML = function () {
 
       /** Empty out any previous values */
-      $scope.listCollection.length = 0;
       $scope.state.xmlResponse = '';
 
       var payload = {
@@ -60,8 +103,9 @@ angular.module('angularPoint')
       }
 
       /** Add query to payload if it's supplied */
-      if ($scope.state.query.length > 0) {
-        payload.CAMLQuery = $scope.state.query;
+      var camlQuery = stripQuery($scope.state.query);
+      if(camlQuery.length > 0) {
+        payload.CAMLQuery = camlQuery;
       }
 
       /** Use service wrapper to make the query */
@@ -102,7 +146,7 @@ angular.module('angularPoint')
 
     /** Save the XML response to the local machine */
     $scope.saveXML = function () {
-      apDebugService.saveXML($scope.state.xmlResponse, $scope.state.fileName);
+      apExportService.saveXML($scope.state.xmlResponse, $scope.state.fileName);
     };
 
     /** Get list fields whenever the selected list changes */
