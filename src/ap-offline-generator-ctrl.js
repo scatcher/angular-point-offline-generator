@@ -73,10 +73,13 @@ angular.module('angularPoint')
      * </pre>
      */
     var stripQuery = function (str) {
-      return str
+      var query = str
         .replace('\'', '')
         .replace('+', '')
         .trim();
+      console.log(query);
+      
+      return query;
     };
 
     /** Main call to query list/library and capture XML response */
