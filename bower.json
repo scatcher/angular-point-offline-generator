@@ -1,6 +1,6 @@
 {
   "name": "angular-point-offline-generator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/scatcher/angular-point-offline-generator",
   "authors": [
     "Scott <github@scotthatcher.com>"
@@ -8,16 +8,15 @@
   "distPath": "dist",
   "description": "angular-point controller/view that allows you to generate offline XML snapshots of SharePoint lists/libraries for debugging.",
   "license": "MIT",
-  "main": "./dist/ap-offline-generator.min.js",
+  "main": "dist/ap-offline-generator.min.js",
   "dependencies": {
     "angular": "~1.2",
     "angular-toastr": "latest",
-    "angular-ui-select2": "~0.0.5",
+    "angular-ui-select": "^0.7.0",
     "jquery": "~1.11",
     "lodash": "^2.4",
     "lodash-deep": "^1.1",
-    "SPServices": "https://github.com/scatcher/SPServices.git#master",
-    "angular-point": "https://github.com/scatcher/angular-point.git#master",
+    "angular-point": "^1.0.0",
     "bootstrap": "^3.2.0"
   },
   "devDependencies": {
@@ -31,5 +30,8 @@
     "**/.*",
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "resolutions": {
+    "angular-point": "master"
+  }
 }

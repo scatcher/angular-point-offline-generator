@@ -9,7 +9,7 @@
  */
 angular.module('demo', [
   'ui.bootstrap',
-  'ui.select2',
+  'ui.select',
   'ui.router',
   'toastr',
 

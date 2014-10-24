@@ -48,19 +48,29 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label>Selected Fields</label>
-                    <select multiple ui-select2 ng-model="state.selectedListFields"
-                            style="width: 100%;"
-                            ng-disabled="listCollection.length < 1 || !state.selectedList">
-                        <option ng-repeat="field in state.availableListFields"
-                                value="{{field.Name}}">{{ field.Name }}
-                        </option>
-                    </select>
 
+                    <div ui-select multiple ng-model="state.selectedListFields" theme="bootstrap"
+                               ng-disabled="listCollection.length < 1 || !state.selectedList">
+                        <div ui-select-match placeholder="Select fields to include...">{{$item.Name}}</div>
+                        <div ui-select-choices repeat="field in state.availableListFields">
+                            {{ field.Name }}
+                        </div>
+                    </div>
                     <p class="help-block">Leaving this blank will return all fields visible in the default list
                         view.</p>
                 </div>
             </div>
         </div>
+        <fieldset><legend>Query Options</legend>
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="option in queryOptions">
+                    <div class="form-group">
+                        <label>{{ option.attr }}</label>
+                        <input type="checkbox" ng-model="option.val" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
         <div class="form-group">
             <label>CAML Query (Optional)</label>
             <textarea class="form-control" ng-model="state.query" rows="3"></textarea>
@@ -78,7 +88,8 @@
                             <input type="text" class="form-control" ng-model="state.fileName">
                            <span class="input-group-btn">
                               <button class="btn btn-success"
-                                      ng-click="saveXML()">Save XML</button>
+                                      ng-click="saveXML()">Save XML
+                              </button>
                            </span>
                         </div>
                     </div>
