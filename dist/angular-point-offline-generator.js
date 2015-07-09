@@ -144,7 +144,7 @@ var ap;
         function buildQueryOptions(opts) {
             var xml = '<QueryOptions>';
             _.each(opts, function (option) {
-                xml += "<" + option.attr + ">" + (option.val ? 'TRUE' : 'FALSE') + "<" + option.attr + ">";
+                xml += "<" + option.attr + ">" + (option.val ? 'TRUE' : 'FALSE') + "</" + option.attr + ">";
             });
             xml += '</QueryOptions>';
             return xml;

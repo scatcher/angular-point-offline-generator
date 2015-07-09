@@ -58,7 +58,7 @@ module ap.offlineGenerator {
 
 
         }
-        
+
         /** Get list/library definitions for the site */
         getLists() {
             var vm = this;
@@ -73,7 +73,7 @@ module ap.offlineGenerator {
                 vm.toastr.info(vm.listCollection.length + ' lists/libraries identified.');
             });
         }
-        
+
         /** Main call to query list/library and capture XML response */
         getXML() {
             var vm = this;
@@ -118,7 +118,7 @@ module ap.offlineGenerator {
                     (new XMLSerializer()).serializeToString(response);
                 });
         }
-        
+
         /** Fetch the available fields for the selected list */
         lookupListFields() {
             var vm = this;
@@ -136,13 +136,13 @@ module ap.offlineGenerator {
                 vm.toastr.error('Please ensure a list is selected before preceding.')
             }
         }
-        
+
         /** Automatically highlight all text when the textarea is selected to
         * allow for easier copy/paste. */
         onTextClick($event) {
             $event.target.select();
         }
-        
+
         /** Save the XML response to the local machine */
         saveXML() {
             var vm = this;
@@ -150,7 +150,7 @@ module ap.offlineGenerator {
         }
 
     }
-    
+
     /**
      * Generate something that looks like the following using settings from the view
      * @returns {string}
@@ -167,12 +167,12 @@ module ap.offlineGenerator {
     function buildQueryOptions(opts) {
         var xml = '<QueryOptions>';
         _.each(opts, function(option) {
-            xml += `<${option.attr}>${option.val ? 'TRUE' : 'FALSE'}<${option.attr}>`;
+            xml += `<${option.attr}>${option.val ? 'TRUE' : 'FALSE'}</${option.attr}>`;
         });
         xml += '</QueryOptions>';
         return xml;
     }
-    
+
     /**
      * @name stripQuery
      * @description
