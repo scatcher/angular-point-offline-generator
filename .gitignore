@@ -1,5 +1,7 @@
 node_modules/
-demo/bower_components/
+bower_components/
 *.log
 .idea
 .tmp
+.DS_Store
+.settings
