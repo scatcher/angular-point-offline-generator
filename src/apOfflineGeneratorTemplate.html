@@ -49,13 +49,13 @@
                 <div class="form-group">
                     <label>Selected Fields</label>
 
-                    <div ui-select multiple ng-model="vm.selectedListFields" theme="bootstrap"
+                    <ui-select multiple ng-model="vm.selectedListFields" theme="bootstrap"
                                ng-disabled="listCollection.length < 1 || !vm.selectedList">
-                        <div ui-select-match placeholder="Select fields to include...">{{$item.Name}}</div>
-                        <div ui-select-choices repeat="field in vm.availableListFields">
+                        <ui-select-match placeholder="Select fields to include...">{{$item.Name}}</ui-select-match>
+                        <ui-select-choices repeat="field in vm.availableListFields">
                             {{ field.Name }}
-                        </div>
-                    </div>
+                        </ui-select-choices>
+                    </ui-select>
                     <p class="help-block">Leaving this blank will return all fields visible in the default list
                         view.</p>
                 </div>
